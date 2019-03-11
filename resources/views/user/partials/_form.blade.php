@@ -11,18 +11,13 @@
     <label for="password">Senha:</label>
     <input type="password" id="password" name="password" value="">
 </p>
-
-
 <p>
     <button type="button" id="undo">Desfazer</button>
     <textarea name="description" id="description" cols="30" rows="10"></textarea>
 </p>
-
-
 <p>
     <input type="submit" value="Salvar">
 </p>
-
 
 <script>
 
@@ -43,7 +38,6 @@
             return this.stateContent
         }
     }
-
 
     class ContentCareTaker {
 
@@ -70,10 +64,8 @@
 
 
     class Content {
-
-        constructor(stateContent) {
-
-            this.element = document.querySelector("#description")
+        constructor(element) {
+            this.element =  this.element
             this.caretaker = new ContentCareTaker();
 
             this.element.addEventListener('blur', () => {
@@ -86,21 +78,18 @@
                     this.undo();
                 });
         }
-
         write(content) {
             this.caretaker.addContentMemento(
                 new ContentMemento( this.element.value ))
         }
-
         undo() {
             this.element.value = this.caretaker.getLastContentMemento()
                 .getContentMemento()
         }
-
     }
 
 
-    var c = new Content();
+    let content = new Content(document.querySelector("#description"));
 
 
 </script>
