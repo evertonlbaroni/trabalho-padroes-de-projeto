@@ -26,7 +26,10 @@
 
 <script>
 
-
+    /**
+     *   Padrão de Projetos Memento, usado para restaurar texto ao precionar botão
+     *  desfazer
+     */
     class ContentMemento {
         constructor(stateContent) {
             this.stateContent = stateContent

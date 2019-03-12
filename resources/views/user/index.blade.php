@@ -8,7 +8,7 @@
                 <th>id</th>
                 <th>Nome</th>
                 <th>E-mail</th>
-                <th>Opções</th>
+                <th>Descrição</th>
             </tr>
             <tbody>
                 @foreach($users as $user)
@@ -16,6 +16,7 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
+                    <td>{{ $user->description }}</td>
                 </tr>
                 @endforeach
             </tbody>
